@@ -1,0 +1,36 @@
+.button {
+  all: unset;
+  border-radius: 100vw;
+  transition: background-color ease 300ms;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus-visible {
+  outline: 3px solid black;
+  outline-offset: 2px;
+}
+
+.primary {
+  background-color: var(--color-orange-400);
+  color: var(--color-white);
+}
+
+.primary:hover {
+  background-color: var(--color-orange-300);
+}
+
+.secondary {
+  background-color: var(--color-blue-100);
+  color: var(--color-white);
+}
+
+.selection {
+  background-color: var(--color-blue-300);
+  color: var(--color-white);
+}
+
+.big {
+}
