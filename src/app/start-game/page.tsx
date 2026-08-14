@@ -1,3 +1,3 @@
 export default function StartGame() {
-  return <div></div>;
+  return <div>Start Game</div>;
 }
