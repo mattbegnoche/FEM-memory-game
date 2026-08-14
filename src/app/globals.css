@@ -171,15 +171,4 @@ a {
 
 /* Mobile Breakpoint */
 @media (max-width: 23.5rem) {
-  .text-preset-1 {
-    font-size: var(--text-preset-4-size);
-  }
-
-  .text-preset-5 {
-    font-size: var(--text-preset-8-size);
-  }
-
-  .text-preset-6 {
-    font-size: var(--text-preset-11-size);
-  }
 }
