@@ -1,13 +1,63 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Spacing — 8px scale, expressed in rem so it scales with root font size */
+  --spacing-0: 0;
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-600: 3rem; /* 48px */
+  --spacing-700: 3.5rem; /* 56px */
+  --spacing-800: 4rem; /* 64px */
+  --spacing-900: 4.5rem; /* 72px */
+  --spacing-1000: 5rem; /* 80px */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-grey-50: #fcfcfc;
+  --color-grey-100: #f2f2f2;
+
+  --color-orange-300: #ffb84a;
+  --color-orange-400: #fda214;
+
+  --color-blue-100: #dfe7ec;
+  --color-blue-300: #bcced9;
+  --color-blue-350: #6395b8;
+  --color-blue-400: #7191a5;
+  --color-blue-800: #304859;
+  --color-blue-950: #152938;
+
+  /* Typography
+     --font-atkinson-hyperlegible is expected from next/font; the quoted name
+     is the fallback for a plain @font-face setup. */
+  --font-family-base:
+    var(--font-atkinson-hyperlegible, "Atkinson Hyperlegible"), sans-serif;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25; /* 125% — every preset in the design */
+
+  --letter-spacing-none: 0;
+  --letter-spacing-wide: 0.3125rem; /* 5px — preset 13 only */
+
+  --text-preset-1-size: 3.5rem; /* 56px */
+  --text-preset-2-size: 3rem; /* 48px */
+  --text-preset-3-size: 2.75rem; /* 44px */
+  --text-preset-4-size: 2.5rem; /* 40px */
+  --text-preset-5-size: 2rem; /* 32px */
+  --text-preset-6-size: 1.625rem; /* 26px */
+  --text-preset-7-size: 1.5rem; /* 24px */
+  --text-preset-8-size: 1.25rem; /* 20px */
+  --text-preset-9-size: 1.125rem; /* 18px */
+  --text-preset-10-size: 1rem; /* 16px */
+  --text-preset-11-size: 0.9375rem; /* 15px */
+  --text-preset-12-size: 0.875rem; /* 14px */
+  --text-preset-13-size: 0.8125rem; /* 13px */
+
+  /* Semantic aliases — the only names components should reference */
+  --background: var(--color-grey-100);
+  --foreground: var(--color-blue-950);
 }
 
 html {
@@ -26,7 +76,7 @@ body {
   flex-direction: column;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,8 +92,94 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Text presets — shared traits first, then the one value that differs. */
+.text-preset-1,
+.text-preset-2,
+.text-preset-3,
+.text-preset-4,
+.text-preset-5,
+.text-preset-6,
+.text-preset-7,
+.text-preset-8,
+.text-preset-9,
+.text-preset-10,
+.text-preset-11,
+.text-preset-12,
+.text-preset-13 {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-none);
+}
+
+.text-preset-1 {
+  font-size: var(--text-preset-1-size);
+}
+
+.text-preset-2 {
+  font-size: var(--text-preset-2-size);
+}
+
+.text-preset-3 {
+  font-size: var(--text-preset-3-size);
+}
+
+.text-preset-4 {
+  font-size: var(--text-preset-4-size);
+}
+
+.text-preset-5 {
+  font-size: var(--text-preset-5-size);
+}
+
+.text-preset-6 {
+  font-size: var(--text-preset-6-size);
+}
+
+.text-preset-7 {
+  font-size: var(--text-preset-7-size);
+}
+
+.text-preset-8 {
+  font-size: var(--text-preset-8-size);
+}
+
+.text-preset-9 {
+  font-size: var(--text-preset-9-size);
+}
+
+.text-preset-10 {
+  font-size: var(--text-preset-10-size);
+}
+
+.text-preset-11 {
+  font-size: var(--text-preset-11-size);
+}
+
+.text-preset-12 {
+  font-size: var(--text-preset-12-size);
+}
+
+.text-preset-13 {
+  font-size: var(--text-preset-13-size);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 48rem) {
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 23.5rem) {
+  .text-preset-1 {
+    font-size: var(--text-preset-4-size);
+  }
+
+  .text-preset-5 {
+    font-size: var(--text-preset-8-size);
+  }
+
+  .text-preset-6 {
+    font-size: var(--text-preset-11-size);
   }
 }

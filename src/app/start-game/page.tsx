@@ -1,3 +1,3 @@
 export default function StartGame() {
-  return <div>Start Game</div>;
+  return <div className="text-preset-1">Start Game</div>;
 }
